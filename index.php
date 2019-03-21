@@ -1,0 +1,129 @@
+<?php
+session_start();
+ 
+require 'init.php';
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#212529">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Home - Eric Rocha</title>
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="fav\apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav\apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav\apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav\apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav\apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav\apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav\apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav\apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav\apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="fav\android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav\favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav\favicon-16x16.png">
+    <link rel="manifest" href="fav\manifest.json">
+    <meta name="msapplication-TileColor" content="#212529">
+    <meta name="msapplication-TileImage" content="fav\ms-icon-144x144.png">
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Alterna navegação">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                  <a class="navbar-brand" href="index.php">Eric Rocha</a>
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="sobre.php">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contato.php">Contato</a>
+                    </li>
+                  </ul>                 
+                  <?php if (isLoggedIn()): ?>
+                      <form class="form-inline my-2 my-lg-0">  
+                      <a href="panel.php" class="btn btn-success my-2 my-sm-0 mr-2">Painel</a>   
+
+                      <a class="btn btn-danger my-2 my-sm-0" href="logout.php">Sair</a>
+                    </form>
+                  <?php else: ?>
+                      <form class="form-inline my-2 my-lg-0">        
+                      <a class="btn btn-success my-2 my-sm-0" href="form-login.php">Login</a>
+                    </form>
+                  <?php endif; ?>    
+                </div>
+        </nav>
+    <div class="container">
+      <!--Titulo-->
+      <div class="row">
+        <div class="col-sm-12 mt-5">
+          <h1 class="text-center text-uppercase">Eric Rocha</h1>
+        </div>
+      </div>
+      <!--Titulo-->
+      <!--Cartao-->
+      <div class="row">
+        <div class="col-sm-12">
+          <div>
+            <div class="shadow p-3 mb-5 mt-5 bg-dark rounded row h-100">
+              <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 w-25 w-25">
+                <img id="profile" src="img/profile.jpeg" alt="profile_pic" class="rounded float-left">
+              </div>
+              <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 w-75 text-light">
+                <div class="mb-5"></div>
+                <p id="pprofile">Olá</p>
+                <p id="pprofile">Eu sou</p>
+                <p id="pprofile">Eric Rocha</p>
+                <p id="pprofile">Sou estudante de Análise e Desenvolvimento de Sistemas.</p>
+                <div class="mb-5"></div>                     
+                <hr class="bg-light mb-2" id="hrprofile">
+                <div class="mb-5"></div>     
+                <p id="pprofile"><a class="text-light" href="https://api.whatsapp.com/send?phone=5545998085846&text=Olá%20vim%20atraves%20de%20seu%20site">+55 45 99808 - 5846</a></p>
+                <p id="pprofile"><a class="text-light" href="mailto:contato@ericrocha.cf">contato@ericrocha.cf</a></p>
+                <br>
+                <div id="socialprofile">
+                  <ul>
+                    <li>
+                      <a href="https://www.facebook.com/ericrocha2012" target="_blank" class="text-light"><i class="fab fa-facebook-square"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/eric_rocha97" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/ericrocha97" target="_blank" class="text-light"><i class="fab fa-github-square"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/in/eric-rocha1997" target="_blank" class="text-light"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                  </ul>
+                </div>                            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--Cartao-->
+    </div>
+  <footer class="row mw-100">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+      <p>Desenvolvido por Eric Rocha © 2019 </p>
+    </div>
+  </footer>
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
